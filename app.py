@@ -1,14 +1,16 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
-with open(r"C:\Users\HP\Projects\Python_for_ML\ML_projects\Supervised\Classification\Crop_recommendation\logreg_crop_classifier.pkl", "rb") as model_file:
-    model = pickle.load(model_file)
+# with open(r"logreg_crop_classifier", "rb") as model_file:
+#     model = joblib.load(model_file)
+model = joblib.load(r"logreg_crop_classifier")
 
-with open(r"C:\Users\HP\Projects\Python_for_ML\ML_projects\Supervised\Classification\Crop_recommendation\label_encoder.pkl", "rb") as f:
-    le: LabelEncoder = pickle.load(f)
+# with open(r"label_encoder", "rb") as f:
+#     le: LabelEncoder = joblib.load(f)
+le = joblib.load(r"label_encoder")
 
 
 st.title("Crop Recommender")
