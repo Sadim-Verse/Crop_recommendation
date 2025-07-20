@@ -33,4 +33,4 @@ if st.button("Predict"):
     predicted_name = le.inverse_transform(predicted_num)
     st.write(f"Predicted Crop to Plant: {predicted_name[0]}")
 
-    st.toast()
+    st.toast("Done!")
